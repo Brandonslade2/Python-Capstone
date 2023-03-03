@@ -1,0 +1,13 @@
+click
+Flask
+Flask-SQLAlchemy
+datetime
+Jinja2
+psycopg2-binary
+SQLAlchemy
+Werkzeug
+Flask-DebugToolbar
+email_validator
+WTForms
+flask_login
+itsdangerous

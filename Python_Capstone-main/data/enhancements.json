@@ -1,0 +1,38 @@
+[
+  {
+    "enhancement_id": "1",
+    "enhancement_name": "No Enhancement",
+    "enhancement_price": "0",
+    "enhancement_description": "No extra charge"
+  },
+  {
+    "enhancement_id": "2",
+    "enhancement_name": "Hot Stones",
+    "enhancement_price": "15",
+    "enhancement_description": "Description needed"
+  },
+  {
+    "enhancement_id": "3",
+    "enhancement_name": "Headache Treatment",
+    "enhancement_price": "15",
+    "enhancement_description": "Description needed"
+  },
+  {
+    "enhancement_id": "4",
+    "enhancement_name": "Cupping Therapy",
+    "enhancement_price": "15",
+    "enhancement_description": "Description needed"
+  },
+  {
+    "enhancement_id": "5",
+    "enhancement_name": "Scalp Treatment",
+    "enhancement_price": "10",
+    "enhancement_description": "Description needed"
+  },
+  {
+    "enhancement_id": "6",
+    "enhancement_name": "Aromatherapy",
+    "enhancement_price": "5",
+    "enhancement_description": "Description needed"
+  }
+]

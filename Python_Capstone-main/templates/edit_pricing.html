@@ -1,0 +1,81 @@
+{% extends 'base_edit_mode.html' %}
+{% block title %}Pricing{% endblock %}
+
+{% block body %}
+<h3>Pricing</h3>
+
+
+<div class="edit-mode-columns">
+
+<div class="edit-mode-left-column">
+
+  <h4>Edit pricing</h4>
+  <br>
+  <ul>
+    {% for price in pricing %}
+    <div class="pricing-item">
+          <form action="/edit_pricing/save" method="POST" onsubmit="alert('Saved successfully!');">
+              <input type="hidden" name="pricing_id" value="{{ price.pricing_id }}"><br>
+
+              <label class="edit-mode-label-items" for="pricing_name">Name</label>
+              <br>
+              <input class="edit-mode-fields" type="text" name="pricing_name" value="{{ price.pricing_name }}" required>
+              <br><br>
+
+              <label class="edit-mode-label-items" for="pricing_location">Location</label>
+              <br>
+              <input class="edit-mode-fields" type="text" name="pricing_location" value="{{ price.pricing_location }}" required>
+              <br><br>
+
+              <label class="edit-mode-label-items" for="pricing_duration">Duration</label>
+              <br>
+              <input class="edit-mode-fields-description" type="text" name="pricing_duration" value="{{ price.pricing_duration }}" title="Enter number of minutes only" placeholder='Minutes' pattern="\d+" required>
+              <br><br>
+              <label class="edit-mode-label-items" for="pricing_price">Price</label>
+              <br>
+              <input class="edit-mode-fields-description" type="text" name="pricing_price" value="{{ price.pricing_price }}" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{1,2})?" required>
+              <br>
+              <input class="edit-mode-option-buttons" type="submit" value="Save" onclick="return confirm('Are you sure you want to save? This cannot be undone!');">
+          </form>
+          <form action="edit_pricing/delete" method="POST" onsubmit="alert('Deleted successfully!');">
+              <input type="hidden" name="pricing_id" value="{{ price.pricing_id }}">
+              <input class="edit-mode-option-buttons" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete? This cannot be undone!');">
+          </form>
+          <br>
+        </div>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="edit-mode-right-column">
+
+    <h4>Add a price</h4>
+    <br>
+    <div class="pricing-item">
+    <form action="{{ url_for('add_pricing') }}" method="POST" onsubmit="alert('Added successfully!');">
+      <label class="edit-mode-label-items" for="pricing_name">Name</label>
+      <br>
+      <input class="edit-mode-fields" type="text" name="pricing_name" required>
+      <br><br>
+      <label class="edit-mode-label-items" for="pricing_location">Location</label>
+      <br>
+      <input class="edit-mode-fields" type="text" name="pricing_location" required>
+      <br><br>
+      <label class="edit-mode-label-items" for="pricing_duration">Duration</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="pricing_duration" title="Enter number of minutes only" placeholder='Minutes' pattern="\d+" required>
+      <br><br>
+      <label class="edit-mode-label-items" for="pricing_price">Price</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="pricing_price" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{2})?" required>
+      <br><br>
+      <input class="edit-mode-option-buttons" type="submit" value="Add Pricing" onclick="return confirm('Are you sure you want to add?');">
+    </form>
+  </ul>
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}

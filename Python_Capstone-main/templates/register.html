@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css')}}">
+    <title>Login page</title>
+</head>
+
+  <h5>Jennie Slade LMT</h5>
+  <h6>Business Ledger</h6>
+  <div class="registration-parent-container">
+    <div class="registrationbox">
+    <form action="{{ url_for('register') }}" method="POST">
+      {{ form.csrf_token }}
+      <label class="edit-mode-label-items" for="username">Create Username</label>
+      <br>
+      {{ form.username(class_="edit-mode-fields", required="required") }}
+      <br><br>
+      <label class="edit-mode-label-items" for="email">Email</label>
+      <br>
+      {{ form.email(class_="edit-mode-fields", required="required") }}
+      <br><br>
+      <label class="edit-mode-label-items" for="password">Create Password</label>
+      <br>
+      {{ form.password(class_="edit-mode-fields", required="required") }}
+      <br><br>
+      <label class="edit-mode-label-items" for="password2">Confirm Password</label>
+      <br>
+      {{ form.password2(class_="edit-mode-fields", required="required") }}
+      <br><br>
+      <input class="edit-mode-option-buttons" type="submit" value="Register">
+    </form>
+      <form action="{{ url_for('login') }}" method="POST">
+        <input class="edit-mode-option-buttons" type="submit" value="Back to login page">
+      </form>
+    </div>
+    </div>
+
+</body>
+</html>

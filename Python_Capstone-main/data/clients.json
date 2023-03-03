@@ -1,0 +1,20 @@
+[
+  {
+    "client_id": "1",
+    "client_name": "Darth Vader",
+    "client_address": "2222 Sith Avenue, Death Star, Alderaan Orbit",
+    "client_phonenumber": "1234567890"
+  },
+  {
+    "client_id": "2",
+    "client_name": "Luke Skywalker",
+    "client_address": "3333 Owen Place, Anchorhead, Tatooine",
+    "client_phonenumber": "0987654321"
+  },
+  {
+    "client_id": "3",
+    "client_name": "Yoda",
+    "client_address": "1111 Yoda's Hut, Dragonsnake Bog, Dagobah",
+    "client_phonenumber": "9000000000"
+  }
+]

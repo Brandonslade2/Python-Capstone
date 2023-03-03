@@ -1,0 +1,23 @@
+[
+  {
+    "pricing_id": "1",
+    "pricing_name": "60min for $90",
+    "pricing_location": "client's home",
+    "pricing_duration": "60",
+    "pricing_price": "90"
+  },
+  {
+    "pricing_id": "2",
+    "pricing_name": "90min for $125",
+    "pricing_location": "client's home",
+    "pricing_duration": "90",
+    "pricing_price": "125"
+  },
+  {
+    "pricing_id": "3",
+    "pricing_name": "120min for $160",
+    "pricing_location": "client's home",
+    "pricing_duration": "120",
+    "pricing_price": "160"
+  }
+]

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Enhancements{% endblock %}
+
+{% block body %}
+
+
+<h3>Enhancements</h3>
+
+
+<ul class="main-content">
+  {% for enhancement in enhancements %}
+  {% if enhancement.enhancement_name == "No Enhancement" %}
+  {% else %}
+  <div class="pricing-item">
+    <p class="description-label">Name</p>
+    <p class="description">
+        {{ enhancement.enhancement_name }}
+    </p>
+    <p class="description-label">Price</p>
+    <p class="description">
+        ${{ enhancement.enhancement_price }}
+    </p>
+    <p class="description-label">Description</p>
+    <p class="description">
+       {{ enhancement.enhancement_description }}
+    </p>
+</div>
+  {% endif %}
+  {% endfor %}
+
+    <br>
+    <br>
+</ul>
+
+
+
+
+{% endblock %}

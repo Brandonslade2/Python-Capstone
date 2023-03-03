@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css')}}">
+    <title>Login page</title>
+  </head>
+  
+  <body>
+    <h5>Jennie Slade LMT</h5>
+    <h6>Business Ledger</h6>
+
+    <div class="parent-container">
+      <div class="loginbox">
+        <form action="{{ url_for('login') }}" method="POST">
+          {{ form.csrf_token }}
+          <label class="edit-mode-label-items" for="username">Username</label>
+          <br>
+          {{ form.username(class_="edit-mode-fields", required="required") }}
+          <br><br>
+
+          <label class="edit-mode-label-items" for="password">Password</label>
+          <br>
+          {{ form.password(class_="edit-mode-fields", required="required") }}
+          <br><br>
+
+          <p class="edit-mode-label-items" style="margin-bottom: 10px;">{{ form.remember_me(class_="edit-mode-option-buttons") }} Keep me logged in on this device</p>
+
+          <input class="edit-mode-option-buttons" type="submit" for="submit" value="Login">
+        </form>
+        <form action="/register" method="POST">
+          <input class="edit-mode-option-buttons" type="submit" value="Create Account">
+        </form>
+        <br>
+        {% if error %}
+          <p class="error-message">{{ error }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "service_id": "1",
+    "service_name": "Deep Tissue",
+    "service_description": "Description needed"
+  },
+  {
+    "service_id": "2",
+    "service_name": "Swedish",
+    "service_description": "Description needed"
+  },
+  {
+    "service_id": "3",
+    "service_name": "Relaxation",
+    "service_description": "Description needed"
+  },
+  {
+    "service_id": "2",
+    "service_name": "Prenatal",
+    "service_description": "Description needed"
+  }
+]

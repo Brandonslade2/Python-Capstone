@@ -1,0 +1,60 @@
+{% extends 'base_edit_mode.html' %}
+{% block title %}Services{% endblock %}
+
+{% block body %}
+<h3>Services</h3>
+
+
+<div class="edit-mode-columns">
+
+<div class="edit-mode-left-column">
+
+  <h4>Edit services</h4>
+  <br>
+  <ul>
+    {% for service in services %}
+    <p class="edit-mode-item-name">{{service.service_name}}</p>
+          <form action="/edit_services/save" method="POST" onsubmit="alert('Saved successfully!');">
+              <input type="hidden" name="service_id" value="{{ service.service_id }}"><br>
+              <label class="edit-mode-label-items" for="service_name">Service Name</label>
+              <br>
+              <input class="edit-mode-fields" type="text" name="service_name" value="{{ service.service_name }}">
+              <br><br>
+              <label class="edit-mode-label-items" for="service_description">Service Description</label>
+              <br>
+              <input class="edit-mode-fields-description" type="text" name="service_description" value="{{ service.service_description }}">
+              <br>
+              <input class="edit-mode-option-buttons" type="submit" value="Save" onclick="return confirm('Are you sure you want to save? This cannot be undone!');">
+          </form>
+          <form action="edit_services/delete" method="POST" onsubmit="alert('Deleted successfully!');">
+              <input type="hidden" name="service_id" value="{{ service.service_id }}">
+              <input class="edit-mode-option-buttons" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete? This cannot be undone!');">
+          </form>
+          <br>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="edit-mode-right-column">
+
+    <h4>Add a service</h4>
+    <br>
+    <form action="{{ url_for('add_service') }}" method="POST" onsubmit="alert('Added successfully!');">
+      <label class="edit-mode-label-items" for="service_name">Service Name</label>
+      <br>
+      <input class="edit-mode-fields" type="service_name" name="service_name" id="service_name">
+      <br><br>
+      <label class="edit-mode-label-items" for="service_description">Service Description</label>
+      <br>
+      <input class="edit-mode-fields-description" type="service_description" name="service_description" id="service_description">
+      <br><br>
+      <input class="edit-mode-option-buttons" type="submit" value="Add Service" onclick="return confirm('Are you sure you want to add?');">
+    </form>
+  </ul>
+  </div>
+
+
+</div>
+
+
+{% endblock %}

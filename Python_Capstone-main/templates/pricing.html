@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Pricing{% endblock %}
+
+{% block body %}
+
+
+<h3>Pricing</h3>
+
+
+<ul class="main-content">
+  {% for price in pricing %}
+  <div class="pricing-item">
+
+    <p class="description-label">Name</p>
+    <p class="description">
+        {{ price.pricing_name }}
+    </p>
+
+    <p class="description-label">Location</p>
+    <p class="description">
+        {{ price.pricing_location }}
+    </p>
+    <p class="description-label">Duration</p>
+    <p class="description">
+        {{ price.pricing_duration }} minutes
+    </p>
+    <p class="description-label">Price</p>
+    <p class="description">
+       ${{ price.pricing_price }}
+    </p>
+</div>
+  {% endfor %}
+
+    <br>
+    <br>
+</ul>
+
+
+
+
+{% endblock %}

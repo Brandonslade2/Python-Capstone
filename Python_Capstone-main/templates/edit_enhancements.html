@@ -1,0 +1,73 @@
+{% extends 'base_edit_mode.html' %}
+{% block title %}Pricing{% endblock %}
+
+{% block body %}
+<h3>Enhancements</h3>
+
+
+<div class="edit-mode-columns">
+
+<div class="edit-mode-left-column">
+
+  <h4>Edit enhancement</h4>
+  <br>
+  <ul>
+    {% for enhancement in enhancements %}
+    {% if enhancement.enhancement_name == "No Enhancement" %}
+    {% else %}
+    <div class="pricing-item">
+          <form action="/edit_enhancements/save" method="POST" onsubmit="alert('Saved successfully!');">
+              <input type="hidden" id="enhancement_id" name="enhancement_id" value="{{ enhancement.enhancement_id }}"><br>
+              <label class="edit-mode-label-items" for="enhancement_name">Name</label required>
+              <br>
+              <input class="edit-mode-fields" type="text" id="enhancement_name" name="enhancement_name" value="{{ enhancement.enhancement_name }}" required>
+              <br><br>
+              <label class="edit-mode-label-items" for="enhancement_price">Price</label>
+              <br>
+              <input class="edit-mode-fields-description" type="text" id="enhancement_price" name="enhancement_price" value="{{ enhancement.enhancement_price }}" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{1,2})?" required>
+              <br><br>
+              <label class="edit-mode-label-items" for="enhancement_description">Description</label>
+              <br>
+              <input class="edit-mode-fields-description" type="text" id="enhancement_description" name="enhancement_description" value="{{ enhancement.enhancement_description }}">
+              <br>
+              <input class="edit-mode-option-buttons" type="submit" value="Save" onclick="return confirm('Are you sure you want to save? This cannot be undone!');">
+          </form>
+          <form action="edit_enhancements/delete" method="POST" onsubmit="alert('Deleted successfully!');">
+              <input type="hidden" id="enhancement_id" name="enhancement_id" value="{{ enhancement.enhancement_id }}">
+              <input class="edit-mode-option-buttons" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete? This cannot be undone!');">
+          </form>
+          <br>
+        </div>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="edit-mode-right-column">
+
+    <h4>Add an enhancement</h4>
+    <br>
+    <div class="pricing-item">
+    <form action="{{ url_for('add_enhancement') }}" method="POST" onsubmit="alert('Added successfully!');">
+      <label class="edit-mode-label-items" for="enhancement_name">Name</label>
+      <br>
+      <input class="edit-mode-fields" type="text" name="enhancement_name" id="enhancement_name" required>
+      <br><br>
+      <label class="edit-mode-label-items" for="enhancement_price">Price</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="enhancement_price" id="enhancement_price" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{2})?" required>
+      <br><br>
+      <label class="edit-mode-label-items" for="enhancement_description">Description</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="enhancement_description" id="enhancement_description">
+      <br><br>
+      <input class="edit-mode-option-buttons" type="submit" value="Add Enhancement" onclick="return confirm('Are you sure you want to add?');">
+    </form>
+  </ul>
+  </div>
+</div>
+
+</div>
+
+
+{% endblock %}

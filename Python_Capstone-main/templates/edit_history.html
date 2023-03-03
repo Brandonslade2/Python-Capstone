@@ -1,0 +1,222 @@
+{% extends 'base_edit_mode.html' %}
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+<h3>Add & Edit History</h3>
+<br>
+<br>
+<br>
+<h4>Add History</h4>
+
+<div class="pricing-item">
+    <form action="/edit_history/add" method="POST" onsubmit="alert('Added successfully!');">
+
+        <label class="edit-mode-label-items" for="client_name">Client</label>
+        <br>
+        <select class="edit-mode-fields" name="client_name" required>
+          <option value="" disabled selected>Select a client</option>
+        {% for client in client_names %}
+          <option value="{{ client.client_name }}">{{ client.client_name }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+
+        <label class="edit-mode-label-items" for="service_name">Service</label>
+        <br>
+        <select class="edit-mode-fields" name="service_name" required>
+          <option value="" disabled selected>Select a service</option>
+        {% for service in service_names %}
+          <option value="{{ service.service_name }}">{{ service.service_name }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+
+        <label class="edit-mode-label-items" for="pricing_name">Pricing</label>
+        <br>
+        <select class="edit-mode-fields" name="pricing_name" required>
+          <option value="" disabled selected>Select a pricing</option>
+        {% for pricing in pricing_names %}
+          <option value="{{ pricing.pricing_name }}">{{ pricing.pricing_name }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+
+        <label class="edit-mode-label-items" for="enhancement_name">Enhancement</label>
+        <br>
+        <select class="edit-mode-fields" name="enhancement_name" required>
+          <option value="" disabled selected>Select an enhancement</option>
+        {% for enhancement in enhancement_names %}
+          <option value="{{ enhancement.enhancement_name }}">{{ enhancement.enhancement_name }}</option>
+          {% endfor %}
+        </select>
+        <br><br>
+
+
+
+      <label class="edit-mode-label-items" for="history_date">Date</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="history_date" placeholder="MM-DD-YYYY" title='MM-DD-YYYY (include hyphens and zeros)' pattern="\d{2}-\d{2}-\d{4}" required>
+      <br><br>
+
+      <label class="edit-mode-label-items" for="history_total_price">Total Price</label>
+      <br>
+      <input class="edit-mode-fields-description" type="text" name="history_total_price" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{1,2})?" required >
+      <br><br>
+
+      <input class="edit-mode-option-buttons" type="submit" value="Add History" onclick="return confirm('Are you sure you want to add?');">
+
+    </form>
+</div>
+<br>
+<br>
+<!---
+<h4>Edit History</h4>
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Service</th>
+      <th>Pricing</th>
+      <th>Enhancement</th>
+      <th>Date</th>
+      <th>Total Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for history_item in history %}
+<div class="pricing-item">
+  <form action="/edit_history/save" method="POST" onsubmit="alert('Saved successfully!');">
+
+      <label class="edit-mode-label-items" for="client_name">Client</label>
+      <select class="edit-mode-fields" name="client_name" required>
+      {% for client in client_names %}
+        <option value="{{ client.client_name }}">{{ client.client_name }}</option>
+        {% endfor %}
+      </select>
+
+      <label class="edit-mode-label-items" for="service_name">Service</label>
+      <select class="edit-mode-fields" name="service_name" required>
+      {% for service in service_names %}
+        <option value="{{ service.service_name }}">{{ service.service_name }}</option>
+        {% endfor %}
+      </select>
+
+      <label class="edit-mode-label-items" for="pricing_name">Pricing</label>
+      <select class="edit-mode-fields" name="pricing_name" required>
+      {% for pricing in pricing_names %}
+        <option value="{{ pricing.pricing_name }}">{{ pricing.pricing_name }}</option>
+        {% endfor %}
+      </select>
+
+      <label class="edit-mode-label-items" for="enhancement_name">Enhancement</label>
+      <select class="edit-mode-fields" name="enhancement_name" required>
+      {% for enhancement in enhancement_names %}
+        <option value="{{ enhancement.enhancement_name }}">{{ enhancement.enhancement_name }}</option>
+        {% endfor %}
+      </select>
+
+
+
+    <label class="edit-mode-label-items" for="history_date">Date</label>
+    <input class="edit-mode-fields-description" type="text" name="history_date">
+
+    <label class="edit-mode-label-items" for="history_total_price">Total Price</label>
+    <input class="edit-mode-fields-description" type="text" name="history_total_price">
+
+
+    <input class="edit-mode-option-buttons" type="submit" value="Save" onclick="return confirm('Are you sure you want to save? This cannot be undone!');">
+
+    <input class="edit-mode-option-buttons" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete? This cannot be undone!');">
+
+  </form>
+</div>
+{% endfor %}
+</tbody>
+</table>
+-->
+
+
+<h4>Edit history</h4>
+  <br>
+  <div style="margin: 0 auto;">
+  <table class="edit-history-table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Service</th>
+        <th>Pricing</th>
+        <th>Enhancement</th>
+        <th>Date</th>
+        <th>Total Price</th>
+        <th>Save</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for history_item in history %}
+      <tr>
+        <form action="/edit_history/save" method="POST" onsubmit="alert('Saved successfully!');">
+          <input type="hidden" name="history_id" value="{{ history_item.history_id }}">
+
+
+          <td>
+          <select class="edit-mode-fields" style="width: 100%" name="client_name" required>
+            {% for client in client_names %}
+            <option value="{{ client.client_name }}" {% if client.client_name == history_item.client_name %} selected {% endif %}>{{ client.client_name }}</option>
+            {% endfor %}
+          </select>
+          </td>
+
+          <td>
+            <select class="edit-mode-fields" style="width: 100%" name="service_name" required>
+              {% for service in service_names %}
+              <option value="{{ service.service_name }}" {% if service.service_name == history_item.service_name %} selected {% endif %}>{{ service.service_name }}</option>
+              {% endfor %}
+            </select>
+            </td>
+
+            <td>
+              <select class="edit-mode-fields" style="width: 100%" name="pricing_name" required>
+                {% for pricing in pricing_names %}
+                <option value="{{ pricing.pricing_name }}" {% if pricing.pricing_name == history_item.pricing_name %} selected {% endif %}>{{ pricing.pricing_name }}</option>
+                {% endfor %}
+              </select>
+              </td>
+
+              <td>
+                <select class="edit-mode-fields" style="width: 100%" name="enhancement_name" required>
+                  {% for enhancement in enhancement_names %}
+                  <option value="{{ enhancement.enhancement_name }}" {% if enhancement.enhancement_name == history_item.enhancement_name %} selected {% endif %}>{{ enhancement.enhancement_name }}</option>
+                  {% endfor %}
+                </select>
+                </td>
+
+                <td>
+                  <input class="edit-mode-fields-description" type="text" name="history_date" value="{{ history_item.history_date }}" placeholder="MM-DD-YYYY" title='MM-DD-YYYY (include hyphens and zeros)' pattern="\d{2}-\d{2}-\d{4}" required>
+                </td>
+
+                <td>
+                  <input class="edit-mode-fields-description" type="text" name="history_total_price" value="{{ history_item.history_total_price }}" placeholder="Enter numbers only. Cents optional." title='Enter numbers only. Cents optional.' pattern="\d+(\.\d{2})?" required>
+                </td>
+               
+                <td>
+                  <input class="edit-mode-option-buttons" type="submit" value="Save" onclick="return confirm('Are you sure you want to save? This cannot be undone!');">
+                </td>
+              </form>
+
+                <td>
+                  <form action="/edit_history/delete" method="POST" onsubmit="alert('Deleted successfully!');">
+                    <input type="hidden" name="history_id" value="{{ history_item.history_id }}">
+                    <input class="edit-mode-option-buttons" type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete? This cannot be undone!');">
+                  </form>
+                </td>
+       
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+{% endblock %}

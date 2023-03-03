@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}History{% endblock %}
+
+
+{% block body %}
+
+<h3>Service History</h3>
+
+
+<table class="normal-history-table">
+    <thead>
+      <tr>
+        <th>Client</th>
+        <th>Service</th>
+        <th>Pricing</th>
+        <th>Enhancement</th>
+        <th>Date</th>
+        <th>Total Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for history in history %}
+        <tr>
+        <td>{{ history.client_name }}</td>
+        <td>{{ history.service_name }}</td>
+        <td>${{ history.pricing_name }}</td>
+        <td>{{ history.enhancement_name }}</td>
+        <td>{{ history.history_date }}</td>
+        <td>${{ history.history_total_price }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <br>
+  </table>
+
+
+
+  {% endblock %}

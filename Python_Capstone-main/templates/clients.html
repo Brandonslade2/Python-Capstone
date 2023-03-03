@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+
+
+<h3>Clients</h3>
+
+
+<ul class="main-content">
+  {% for client in clients %}
+  <div class="pricing-item">
+    <p class="description-label">Name</p>
+    <p class="description">
+        {{ client.client_name }}
+    </p>
+    <p class="description-label">Address</p>
+    <p class="description">
+        {{ client.client_address }}
+    </p>
+    <p class="description-label">Phone Number</p>
+    <p class="description">
+       {{ client.client_phonenumber }}
+    </p>
+</div>
+  {% endfor %}
+
+    <br>
+    <br>
+</ul>
+
+
+
+
+{% endblock %}

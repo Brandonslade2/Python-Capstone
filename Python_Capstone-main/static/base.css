@@ -1,0 +1,456 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+a {
+    color: rgb(66, 66, 66);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgba(31, 106, 185, 0.794);
+}
+
+.edit-form, .title {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+header {
+    text-align: center;
+  }
+
+
+h5 {
+    margin-top: 1.2em;
+    font-family: 'Lucida Handwriting';
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+    font-size: 200%;
+}
+
+h6 {
+    margin-top: 1%;
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    font-size: 170%;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+}
+
+.home-page-description {
+    text-align: center;
+    font-family: 'Trebuchet MS';
+    margin: 10%;
+    margin-bottom: 100vh;
+}
+
+
+
+.parent-container {
+    display: flex;
+    justify-content: center; /* horizontally center the login box */
+    height: 100%;
+    margin-top: 4%; 
+  }
+  
+  .loginbox {
+    width: 20%;
+    height: 50vh;
+    background-color: white;
+    border: 1px solid black;
+    position: relative; /* change position to relative */
+    margin: 0 auto; /* center horizontally using margin */
+    text-align: center;
+    box-shadow: 0px 0px 20px gray;
+  }
+
+  .registration-parent-container {
+    display: flex;
+    justify-content: center; /* horizontally center the login box */
+    height: 100%;
+    margin-top: 2%;
+  }
+
+  .registrationbox {
+    width: 35%;
+    height: 70vh;
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 auto; /* center horizontally using margin */
+    text-align: center;
+    box-shadow: 0px 0px 20px gray;
+  }
+
+
+
+h1 {
+    margin-top: 0.4em;
+    font-family: 'Lucida Handwriting';
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    font-weight: 20;
+    vertical-align:middle;
+    margin: 0;
+    display: inline-block;
+    padding-right: 18%; /*this is the thing right here that keeps the title "centered" as much as possible. I have yet to figure out a better way to do this*/
+}
+
+
+h2 {
+    margin-top: 1.8em;
+    font-family: 'Lucida Handwriting';
+    font-size: 70%;
+    display: flex; /* this is the thing that makes it flexible as you shrink the page*/
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    box-shadow: 0px 10px 10px gray;
+    white-space: normal;
+}
+
+
+h3 {
+    margin-top: 1.2em;
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+    text-decoration: underline;
+}
+
+h4 {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+    text-decoration: underline;
+}
+
+.welcomemessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lucida Handwriting', cursive, sans-serif;
+}
+
+.edit-form {
+    margin-left: 1em;
+}
+
+.normal-mode-button {
+    font-family: 'Trebuchet MS', 'Lucida Handwriting', cursive, sans-serif;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.normal-mode-button:hover {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.normal-mode-button-form {
+    float: left;
+    margin-left: 5%;
+    margin-top: 1%;
+}
+
+
+.edit-mode-button {
+    font-family: 'Trebuchet MS', 'Lucida Handwriting', cursive, sans-serif;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.edit-mode-button:hover {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.edit-mode-button-form {
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.logout-button {
+    font-family: 'Trebuchet MS', 'Lucida Handwriting', cursive, sans-serif;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.logout-button:hover {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.logout-button-form {
+    float: right;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+
+.edit-button:hover {
+    text-decoration: underline;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.name {
+    font-family: 'Lucida Handwriting';
+    font-size: 100%;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.description {
+    font-family: 'Trebuchet MS';
+    margin-bottom: 1.5em;
+    font-size: 90%;
+    word-wrap: break-word;
+}
+
+.description-label {
+    font-family: 'Trebuchet MS';
+    font-size: 100%;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-content {
+    text-align:center;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+.edit-mode-columns {
+    width: 100%;
+    max-width: 100000em;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: center;
+}
+  
+.edit-mode-left-column,
+.edit-mode-right-column {
+    vertical-align: top;
+    width: 49.8%;
+    padding: 20px;
+    padding-top: 0px;
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: normal;
+}
+
+
+.edit-mode-label-items {
+    font-size: 70%;
+    font-family: 'Trebuchet MS', 'Lucida Handwriting', cursive, sans-serif;
+}
+
+.edit-mode-option-buttons {
+    font-family: 'Trebuchet MS', 'Lucida Handwriting', cursive, sans-serif;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.edit-mode-option-buttons:hover {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+#td-edit-history-buttons {
+    white-space: nowrap;
+}
+
+.edit-mode-fields {
+    font-family: 'Trebuchet MS';
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 8px;
+    width: 50%;
+  }
+
+.edit-mode-fields:focus {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-mode-fields-description {
+    font-family: 'Trebuchet MS';
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 8px;
+    width: 80%;
+  }
+
+  .edit-mode-fields-description-additionalfees {
+    font-family: 'Trebuchet MS';
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    font-size: 8px;
+    width: 75.4%;
+  }
+
+  .edit-mode-fields-description:focus {
+    border-color: #3b99fc;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 153, 252, 0.25), 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.edit-mode-item-name {
+    font-family: 'Trebuchet MS';
+    padding-top: 10%;
+    font-weight: bold;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.pricing-item {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    padding: 20px;
+    max-width: 40%;
+    margin: 0 auto;
+    margin-top: 4%;
+    word-wrap: break-word;
+    text-align: center;
+  }
+
+
+  .normal-history-table {
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+
+  
+    
+/* Make the table header row stick to the top of the page */
+.normal-history-table {
+    text-align: center;
+    margin: auto;
+    font-family: 'Trebuchet MS';
+}
+
+
+.normal-history-table th {
+    font-size: 70%;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+    text-decoration: underline;
+}
+
+  /* Add lines between every row */
+  .normal-history-table tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  /* Increase spacing between rows */
+  .normal-history-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  
+  /* Add padding to table cells */
+  .normal-history-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+
+.edit-history-table {
+    text-align: center;
+    margin: auto;
+}
+
+.edit-history-table th {
+    font-family: 'Trebuchet MS';
+    font-size: 70%;
+    text-align: center;
+    color: black;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+    background-color: transparent;
+    font-weight: 20;
+    text-decoration: underline;
+}
+
+.error-message {
+    margin-top: 5%;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    color: red;
+    text-align: center;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 0px red;
+    }
+    to {
+      box-shadow: 0 0 20px red;
+    }
+  }
+
+
